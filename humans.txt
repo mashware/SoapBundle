@@ -5,6 +5,6 @@ Twitter: AlbertoVioque
 Location: Cartagena, Murcia, España.
 
 /* THANKS */
-http://github.com
-http://symfony.com
+http://www.github.com
+http://www.symfony.com
 Fabien Potencier
