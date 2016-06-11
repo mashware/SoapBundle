@@ -1,0 +1,50 @@
+{
+    "name": "mashware/soap-bundle",
+    "description": "Soap Bundle",
+    "keywords": [
+        "mashware",
+        "soap"
+    ],
+    "homepage": "https://github.com/mashware/SoapBundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "support": {
+        "email": "mashware@gmail.com",
+        "forum": "",
+        "source": "https://github.com/mashware/SoapBundle",
+        "issues": "https://github.com/mashware/SoapBundle/issues"
+    },
+    "authors": [
+        {
+            "name": "Alberto Vioque",
+            "email": "mashware@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.4|^7.0",
+        "doctrine/common": "^2.5",
+        "doctrine/orm": "^2.5",
+
+        "symfony/http-kernel": "^2.7|^3.0",
+        "symfony/config": "^2.7|^3.0",
+        "symfony/dependency-injection": "^2.7|^3.0"
+
+    },
+    "require-dev": {
+        "doctrine/data-fixtures": "^1.1",
+        "phpunit/phpunit": "4.8.19"
+    },
+    "autoload": {
+        "exclude-from-classmap": [
+            "/Tests/"
+        ],
+        "psr-4": {
+            "Mash\\Bundle\\SoapBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
+}
