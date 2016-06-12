@@ -6,6 +6,14 @@ tools:
     php_pdepend:
         excluded_dirs: [vendor]
     external_code_coverage: true
+build:
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=some-file'
+                coverage:
+                    file: 'some-file'
+                    format: 'clover'
 
 checks:
     php:
