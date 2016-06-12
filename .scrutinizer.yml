@@ -6,3 +6,8 @@ tools:
     php_pdepend:
         excluded_dirs: [vendor]
     external_code_coverage: true
+
+checks:
+    php:
+        code_rating: true
+        duplication: true
