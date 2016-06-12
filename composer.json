@@ -10,7 +10,6 @@
     "license": "MIT",
     "support": {
         "email": "mashware@gmail.com",
-        "forum": "",
         "source": "https://github.com/mashware/SoapBundle",
         "issues": "https://github.com/mashware/SoapBundle/issues"
     },
@@ -24,11 +23,9 @@
         "php": "^5.4|^7.0",
         "doctrine/common": "^2.5",
         "doctrine/orm": "^2.5",
-
         "symfony/http-kernel": "^2.7|^3.0",
         "symfony/config": "^2.7|^3.0",
         "symfony/dependency-injection": "^2.7|^3.0"
-
     },
     "require-dev": {
         "doctrine/data-fixtures": "^1.1",
