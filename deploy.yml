@@ -1,6 +1,7 @@
 ---
 - name: Deploy example app to my-server.com
   hosts: all
+  become: root
   vars:
     ansistrano_deploy_from: "{{ playbook_dir }}" # Where my local project is (relative or absolute path)
     ansistrano_deploy_to: "/var/www/my-app"
