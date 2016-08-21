@@ -9,3 +9,25 @@
 [![Total Downloads](https://poser.pugx.org/mashware/soap-bundle/downloads.png)](https://packagist.org/packages/mashware/soap-bundle)
 
 Bundle that manages calls soap keeping a history of calls and responses
+
+
+
+Building dependency tree                                                   
+Reading state information... Done                                          
+The following extra packages will be installed:                            
+  python-crypto python-httplib2 python-jinja2 python-markupsafe            
+  python-paramiko python-setuptools sshpass                                
+Suggested packages:                                                        
+  python-crypto-dbg python-crypto-doc python-jinja2-doc                    
+The following NEW packages will be installed:                              
+  ansible python-crypto python-httplib2 python-jinja2 python-markupsafe    
+  python-paramiko python-setuptools sshpass                                
+0 upgraded, 8 newly installed, 0 to remove and 32 not upgraded.            
+FATAL -> Failed to fork.                                                   
+ubuntu@ip-172-31-46-212:~$                                                 
+
+
+
+
+sudo apt-get update
+sudo apt-get install ansible
