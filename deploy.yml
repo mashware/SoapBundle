@@ -1,14 +1,25 @@
 ---
-- name: Deploy example app to my-server.com
-  hosts: all
-  become: root
-  vars:
-    ansistrano_deploy_from: "{{ playbook_dir }}" # Where my local project is (relative or absolute path)
-    ansistrano_deploy_to: "/var/www/my-app"
-    ansistrano_deploy_via: git
-    ansistrano_git_repo: git@github.com:mashware/SoapBundle.git
-    ansistrano_git_branch: master
-
-  # Variables used in the download deployment strategy
+- name: Deploy a dessarollo de SGAAPI
+  hosts: webservers
   roles:
-    - { role: carlosbuenosvinos.ansistrano-deploy }
+    - servergrove.symfony2
+
+  remote_user: apache # Usuario con el que intentará conectarse por ssh a los hosts
+
+  vars:
+    - symfony_project_env: dev
+    - symfony_project_root:               "/var/www/sgaapi_dev"
+    - symfony_project_name:               "sga-dev"
+    - symfony_project_keep_releases:           3
+    - symfony_project_composer_opts:       '--dev --optimize-autoloader --no-interaction'
+    - symfony_project_console_opts:        '--no-debug'
+    - symfony_project_repo:                "git@github.com:mashware/SoapBundle.git"
+    - symfony_project_branch:              "develop"
+    - symfony_project_composer_path: "/usr/local/bin/composer"
+  tasks:
+    - name: hook | Create web/uploads folder.
+      file: state=directory path={{symfony_shared_dir}}/web/uploads
+    - name: hook | Symlink to release.
+      file: state=link src="{{symfony_shared_dir}}/web/uploads" path="{{symfony_current_release_dir}}/web/uploads"
+    - name: Cambio de permisos a log
+      file: path="{{ symfony_shared_dir }}/app/logs" owner=deploy group=apache mode=777 recurse=yes
